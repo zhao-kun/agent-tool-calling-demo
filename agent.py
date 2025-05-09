@@ -111,7 +111,7 @@ class ShoppingAgent:
     def __init__(self):
         import os
         api_key = os.environ.get("OPENROUTER_API_KEY")
-        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key="api_key")
+        self.client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
 
     def run(self, user_message: str, conversation_history: List[Dict[str, str]] = []) -> str:
         if self.is_intent_malicious(user_message):
